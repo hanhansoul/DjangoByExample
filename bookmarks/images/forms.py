@@ -7,7 +7,7 @@ from django.utils.text import slugify
 from images.models import Image
 
 
-class ImageCreatedForm(forms.ModelForm):
+class ImageCreateForm(forms.ModelForm):
     class Meta:
         model = Image
         fields = ('title', 'url', 'description')
@@ -31,7 +31,7 @@ class ImageCreatedForm(forms.ModelForm):
     def save(self, force_insert=False,
              force_update=False,
              commit=True):
-        image = super(ImageCreatedForm, self).save(commit=False)
+        image = super(ImageCreateForm, self).save(commit=False)
         image_url = self.cleaned_data['url']
         image_name = '{}.{}'.format(slugify(image.title),
                                     image_url.rsplit('.', 1)[1].lower())
