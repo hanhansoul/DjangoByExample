@@ -5,7 +5,7 @@
     <p>Please, use the following form to log-in:
         If you don't have an account <a href="{% url "account:register" %}">register here</a>
     </p>
-    <form action='.' method="post">
+    <form action='' method="post">
         {{ form.as_p }}
         {% csrf_token %}
         <p><input type="submit" value="Log-in"></p>
