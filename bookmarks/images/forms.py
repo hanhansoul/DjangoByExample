@@ -16,6 +16,11 @@ class ImageCreatedForm(forms.ModelForm):
         }
 
     def clean_url(self):
+        """
+        clean_url()方法用于验证url的合法性
+        clean_<fieldname>()方法在指定is_valid()方法时执行，用于验证或整理域值
+        :return:
+        """
         url = self.cleaned_data['url']
         valid_extensions = ['jpg', 'jpeg']
         extension = url.rsplit('.', 1)[1].lower()
