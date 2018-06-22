@@ -1,6 +1,5 @@
 (function () {
     if (window.bookmarklet !== undefined) {
-        console.log("window.bookmarklet")
         bookmarklet();
     } else {
         document.body.appendChild(document.createElement('script')).src =
